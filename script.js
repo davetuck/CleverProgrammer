@@ -157,6 +157,35 @@
       // tells you the overall length of the array.  index 0 = 1, index 1 = 2, etc.
       console.log(groceries.length);
 
+  // // All Array Methods:
+  //   let arr = [1, 2, 3, 4];
+  //   arr.push(9);                   // [1, 2, 3, 4, 9]
+  //   arr.pop();                     // [1, 2, 3, 4]
+  //   arr.shift();                   // [2, 3, 4]
+  //   arr.unshift(10);               // [ 10, 2, 3, 4]
+  //   arr.concat(15);                // [1, 2, 3, 4, 15]
+  //   arr.join("-");                 // 1-2-3-4
+  //   arr.splice(2, 1, 88)           // [1, 2, 88, 4]
+  //   arr.sort();                    // [1, 2, 3, 4]
+  //   arr.reverse();                 // [4, 3, 2, 1]
+  //   arr.splice(1, 1);              // [1, 3, 4]
+  //   arr.at(1);                     // 2
+  //   arr.fill(3);                   // [3, 3, 3, 3]
+  //   arr.indexOf(3);                // 2
+  //   arr.includes(1);               // True
+  //   arr.toString();                // 1, 2, 3, 4
+  //   arr.length;                    // 4
+  //   arr.find((n) => n % 2 === 0);  // returns even number | return 2
+  //   arr.findIndex((n) => n % 2 != 0);  // 0
+  //   arr.map((n) => n * 2);         // [2, 4, 6, 8]
+  //   arr.filter((n) => n % 2 != 0); // [1, 3]
+  //   arr.every((n) => n < 6);       // checks if EVERY element is less than 6 | return True
+  //   arr.some((n) => n < 6);        // checks if ANY elemtn isless than 6 | return True
+  //   arr.reduce((sum, current) => sum + current); // 10
+  //   arr.forEach(alert);            // for each element call alert and display values
+  //   Array.isArray(arr);            // true whenever the value is an array and false if not.  | return True
+
+
 // 05 OBJECTS  {}
     // Objects are a type of variable, quite similar to Arrays, but they have something called "key-value pairs".
       // key value pairs consist of properties
@@ -239,3 +268,50 @@
   }
   console.log(introducer());
 
+  // You can also write it this way:
+    // This way you can pass in different values in the console log for the parameters.
+  const introducer1 = (firstName, shirt, assets, liabilities, color, length) => {
+    const person = {
+      firstName: firstName,  
+      shirt: shirt,
+      assets: assets,
+      liabilities: liabilities,
+      netWorth: function () {                       // the function is actually a METHOD
+        return person.assets - this.liabilities;      //'this' will also associate the object name with the function
+      }     //  👆🏼     these    👆🏼    both associate the object we're underneath/within/referring to.
+    }
+    const hair = {
+      color: color,
+      length: length
+    }
+    const intro = `Hi, my name is ${person.firstName}, and my shirt color is ${person.shirt}.  My hair color is ${hair.color} and is ${hair.length} length.  BTW, my net worth is $${person.netWorth()} so that means I'm better than you.`
+    return intro;                                                                                                                                   // this is a method because it is  👆🏼key.👆🏼value 👆🏼this is how you call it just like a regular function
+  }
+  console.log(introducer1("Leonardo", "white", 1000000000, 54323423, "sh*tty blonde", "medium"));
+  console.log(introducer1("Danny Brown", "stained", 1231231234, 1234555, "neon green", "short"));
+
+  // METHODS
+    // a method is a property containing a function definition (ie: Math.floor(), Math.ceil(), Math.random())
+    // Properties:
+      // car.name = Fiat, car.model = 500, car.weight = 850kg, car.color = white
+    // Methods:
+      // car.start(), car.drive(), car.brake(), car.stop()
+
+// 06 FOR LOOPS
+  // Loops just repeat the same line of code, again and again.
+
+  const fruits = ['🍌', '🍎', '🍐', '🍊', '🍌', '🍎', '🍐', '🍊', '🍌', '🍎', '🍐', '🍊'];
+  // console.log(fruits[0]);    
+  // console.log(fruits[1]);
+  // console.log(fruits[2]);
+  // console.log(fruits[3]);    // this takes way too long for larger loops
+  //                     👇🏼 this means "run the same amount of times as there are items in this array"
+  for (let i = 0; i < fruits.length; i++) // 👈🏼 "i++" just means increment i by one.  You can increment by 2 with i = i + 2 and so on.
+  //    👆🏼 this specifies the position to start looping at.  0 will begin at the start of the array.
+  console.log(i, fruits[i]);
+  
+  // there's a better way of writing this loop.
+  const emojis = ['🤣', '😬', '🤢', '🤔']
+  for (const emoji of emojis) {
+    console.log(emoji);
+  }
