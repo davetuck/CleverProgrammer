@@ -299,19 +299,61 @@
 
 // 06 FOR LOOPS
   // Loops just repeat the same line of code, again and again.
+  // Example 1
+    const fruits = ['🍌', '🍎', '🍐', '🍊', '🍌', '🍎', '🍐', '🍊', '🍌', '🍎', '🍐', '🍊'];
+    // console.log(fruits[0]);    
+    // console.log(fruits[1]);
+    // console.log(fruits[2]);
+    // console.log(fruits[3]);    // this takes way too long for larger loops
+    //                     👇🏼 this means "run the same amount of times as there are items in this array"
+    for (let i = 0; i < fruits.length; i++) // 👈🏼 "i++" just means increment i by one.  You can increment by 2 with i = i + 2 and so on.
+    //    👆🏼 this specifies the position to start looping at.  0 will begin at the start of the array.
+    console.log(i, fruits[i]);
+    
+    // there's a better way of writing this loop:
+    const emojis = ['🤣', '😬', '🤢', '🤔', '🤪', '😎', '😅', '😝', '🤬']
+    //          👇🏼 you can call this whatever you want, as long as it matches in the console.log(asdflkj);
+    for (const emoji of emojis) {
+      console.log(emoji); // 👆🏼 this just has to match the array title
+    }
 
-  const fruits = ['🍌', '🍎', '🍐', '🍊', '🍌', '🍎', '🍐', '🍊', '🍌', '🍎', '🍐', '🍊'];
-  // console.log(fruits[0]);    
-  // console.log(fruits[1]);
-  // console.log(fruits[2]);
-  // console.log(fruits[3]);    // this takes way too long for larger loops
-  //                     👇🏼 this means "run the same amount of times as there are items in this array"
-  for (let i = 0; i < fruits.length; i++) // 👈🏼 "i++" just means increment i by one.  You can increment by 2 with i = i + 2 and so on.
-  //    👆🏼 this specifies the position to start looping at.  0 will begin at the start of the array.
-  console.log(i, fruits[i]);
-  
-  // there's a better way of writing this loop.
-  const emojis = ['🤣', '😬', '🤢', '🤔']
-  for (const emoji of emojis) {
-    console.log(emoji);
-  }
+  // Example 2
+    const numbers = [1, 2, 3, 4, 5, 6];
+
+    // for loop
+    for (let i = 0; i < numbers.length; i++)
+    console.log(numbers[i]);
+
+    // better loop
+    for (const number of numbers) {
+      console.log(number);
+    }
+
+    // DOUBLING every single number of an array
+    for (let i = 0; i < numbers.length; i++)
+    console.log(numbers[i]*2)
+      // and the better way of writing it:
+    for (const number of numbers) {
+      console.log(number * 2)
+    }
+
+    // Create a NEW ARRAY with numbers that are doubled from a previous array
+    let result = [] // 👈🏼 this is saying you want a new array
+    for (const number of numbers) {
+      result.push(number * 2);
+    };
+    console.log(result);
+
+      // now make that in to a FORMULA, where we square the numbers instead
+    const double = (numbers) => {
+      let result = []
+      for (const number of numbers) {
+        result.push(number ** 2)   // double astericks will square numbers
+      }
+      return result
+    }
+    console.log(double([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]));
+
+    // sum up all numbers in an array
+
+// 07 ARRAY AND OBJECT EXERCISES
