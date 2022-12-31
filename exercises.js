@@ -67,33 +67,3 @@ console.log(fuckBitchesGetMoney(9, 8, 5, 4));
     // let minmaxnumbers = [2, 5, 8, 1, 22, 6, 4, 12, 3, 2, 1]
     console.log(findMax([2, 5, 78, 45, 34, 3, 4, 56, 3,2, 12, 45, 56, 233]));
   
-// Determine the frequency a specific letter occurs in a phrase string.
-  // letterFrequency('haha') 👉🏼 {'h': 2, 'a': 2}  (this is what we're looking for);
-    // my attempt
-    // const letterFrequency = (phrases) => {
-    //   result = phrases[0];
-    //   for (const letters in phrases) {
-    //     let phrases = {
-    //       phrase1: "haha",
-    //       phrase2: "hehe",
-    //       phrase3: "hoho",
-    //       phrase4: "teehee"
-    //     }
-    //   };
-    //   return {result};
-    // };
-    // console.log(letterFrequency());
-    
-    // Example:
-      // objects come in handy here, arrays aren't as good.  Key value pairs are... key.
-      // in objects, you can't have the same key repeating twice
-    const letterFrequency = (phrase) => {
-      console.log(phrase);
-      for (const letter of phrase) {
-        if (letter === letter) {
-
-          console.log(letter);
-        }
-      }
-    }
-    console.log(letterFrequency('haha'));

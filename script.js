@@ -405,7 +405,8 @@
     // for loop
     for (const sum of numbers) {
       console.log(sum);
-      result = result + sum;
+      //result = result + sum;  // you wouldn't write it like this, instead you'd write the below
+      result += sum; // = 👆🏼
     }
     return {result};
   }
@@ -413,4 +414,71 @@
   console.log(sumArray(nums));
 
 
+// Determine the frequency a specific letter occurs in a phrase string.
+  // letterFrequency('haha') 👉🏼 {'h': 2, 'a': 2}  (this is what we're looking for);
+    // my attempt
+    // const letterFrequency = (phrases) => {
+    //   result = phrases[0];
+    //   for (const letters in phrases) {
+    //     let phrases = {
+    //       phrase1: "haha",
+    //       phrase2: "hehe",
+    //       phrase3: "hoho",
+    //       phrase4: "teehee"
+    //     }
+    //   };
+    //   return {result};
+    // };
+    // console.log(letterFrequency());
+    
+    // // Example:
+    //   // objects come in handy here, arrays aren't as good.  Key value pairs are... key.
+    //   // in objects, you can't have the same key repeating twice
+      const letterFrequency = (phrase) => {
+        // letterFrequency('haha') 👉🏼 {'h': 2, 'a': 2}  (this is what we're looking for);
+        console.log(phrase);
+        // make a frequency object
+        let frequency = {};
+        for (const letter of phrase) {
+          // check IF letter exists in frequency
+            // increment the key value bu +1
+            // otherwise set the value to 1
+          if (letter in frequency) {
+            //frequency[letter] = frequency[letter] + 1;  // you won't ever see something written like this, rather written like the below
+            // frequency[letter] += 1; // if you're just incrementing something by one, you can do ++
+            frequency[letter]++;
+            } else {
+            frequency[letter] = 1;
+            };
+          };
+          return frequency;
+        }
+      // phrase = {
+      //   phrase1: 'haha',
+      //   phrase2: 'hehe',
+      //   phrase3: 'hoho',
+      //   phrase4: 'teehee'
+      // };
+      console.log(letterFrequency('lol, what are you doing later tonight, lol haha!'));
 
+// Now create a function that determines repetitive words in a phrase
+  const wordFrequency = (phrase) => {
+    let words = phrase.split(' ');  // words is the array we're creating by splitting up the phrase.
+    return letterFrequency(words);  // THIS is utilizing the previous function as it is identican in what it's trying to do.
+    // let frequency = {}
+    // for (const word of words) {  // this for loop is not needed to complete the function
+    //   // console.log(word);
+    //   if (word in frequency) {
+    //     frequency[word]++
+    //   } else {
+    //     frequency[word] = 1
+    //   }
+    // }
+    // console.log(words)
+    // return frequency;
+  }
+  console.log(wordFrequency('lol hi lol hello hello bitch, where in the hell are you bitch?'));
+
+  // incremental operators
+    // ++, --, +=, +=1
+  // phrase.split(' '); this will split the words in a string into separate array inputs
