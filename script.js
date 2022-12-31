@@ -328,6 +328,9 @@
     for (const number of numbers) {
       console.log(number);
     }
+  // in FOR LOOPS, you can use "in" and "of" between your variables.  
+    // "of" returns a list of values of the numeric properties of the object being iterated.
+    // "in" returns a list of keys on the object being iterated.
 
     // DOUBLING every single number of an array
     for (let i = 0; i < numbers.length; i++)
@@ -357,3 +360,57 @@
     // sum up all numbers in an array
 
 // 07 ARRAY AND OBJECT EXERCISES
+  // Count the characters in a phrase
+    // My attempt
+    const howManyCharacters = () => {
+      const phrase = "hey, can you go to the grocery store with me you motherfucking bitch?";
+      let result = phrase.length  // be sure to type "let result", you forgot the let before, idiot.
+      for (letters of phrase) {
+        // console.log(letters);  apparently not necessary
+      };
+      return result;
+    }
+    console.log(howManyCharacters());  // returns a nice added up integer to the console.log
+
+    // Example:
+    const howManyLetters = (phrase1) => {
+      // const phrase1 = 'hey, can you go to the grocery store with me?';  you can instead put this in the arguments for the function, then console log whatever you want.
+      let result = 0;  // this is added once we add result to the for loop.
+      for (index in phrase1) {
+        // console.log(letters);  this returns numbers starting from zero
+        // console.log(letters + 1);  this returns the numbers as a string (1, 11, 12, 13, etc.)
+        // console.log(Number(letters) + 1);  // this changes the letters to number form (from a string) and adds the 1 to them.
+        result = Number(index) + 1;  // this stores the correct answer, 45, in result, at the end of the loop.
+      }
+      // return {result: result}; can be written the same as below:
+      return {result};
+      // return {result: phrase1.length};
+    }
+    //const phrase1 = 'hey, can you go to the grocery store with me?';  // this can be passed in rather than added within the function.  It must be defined prior to console.log ing it.  It is hard-coded on this line.
+    // const phrase1 = prompt('What phrase would you like to count?');  // you can also add a prompt if you don't want to hard-code in the phrase (string);
+    const phrase1 = "I believe that we will win!!";
+    console.log(howManyLetters(phrase1));
+      // I basically did it right, but I skipped some steps.  These are the steps to manually figure out what to do.
+
+  // Making a function that sums values in an array
+  // [1, 2, 3, 4]  (this is how a human would do it)
+    // result = 0
+    // result = 1
+    // result = 3
+    // result = 6
+    // result = 10
+
+  const sumArray = (numbers) => {
+    let result = 0;
+    // for loop
+    for (const sum of numbers) {
+      console.log(sum);
+      result = result + sum;
+    }
+    return {result};
+  }
+  const nums = [1, 2, 3, 4, 5, 7, 9, 11]
+  console.log(sumArray(nums));
+
+
+
