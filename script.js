@@ -416,24 +416,9 @@
 
 // Determine the frequency a specific letter occurs in a phrase string.
   // letterFrequency('haha') 👉🏼 {'h': 2, 'a': 2}  (this is what we're looking for);
-    // my attempt
-    // const letterFrequency = (phrases) => {
-    //   result = phrases[0];
-    //   for (const letters in phrases) {
-    //     let phrases = {
-    //       phrase1: "haha",
-    //       phrase2: "hehe",
-    //       phrase3: "hoho",
-    //       phrase4: "teehee"
-    //     }
-    //   };
-    //   return {result};
-    // };
-    // console.log(letterFrequency());
-    
-    // // Example:
-    //   // objects come in handy here, arrays aren't as good.  Key value pairs are... key.
-    //   // in objects, you can't have the same key repeating twice
+    // Example:
+      // objects come in handy here, arrays aren't as good.  Key value pairs are... key.
+      // in objects, you can't have the same key repeating twice
       const letterFrequency = (phrase) => {
         // letterFrequency('haha') 👉🏼 {'h': 2, 'a': 2}  (this is what we're looking for);
         console.log(phrase);
@@ -441,7 +426,7 @@
         let frequency = {};
         for (const letter of phrase) {
           // check IF letter exists in frequency
-            // increment the key value bu +1
+            // increment the key value bu + 1
             // otherwise set the value to 1
           if (letter in frequency) {
             //frequency[letter] = frequency[letter] + 1;  // you won't ever see something written like this, rather written like the below
@@ -477,7 +462,8 @@
     // console.log(words)
     // return frequency;
   }
-  console.log(wordFrequency('lol hi lol hello hello bitch, where in the hell are you bitch?'));
+  const userInput = prompt('Write your input sentence here')
+  console.log(wordFrequency(userInput));
 
   // incremental operators
     // ++, --, +=, +=1

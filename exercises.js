@@ -67,3 +67,33 @@ console.log(fuckBitchesGetMoney(9, 8, 5, 4));
     // let minmaxnumbers = [2, 5, 8, 1, 22, 6, 4, 12, 3, 2, 1]
     console.log(findMax([2, 5, 78, 45, 34, 3, 4, 56, 3,2, 12, 45, 56, 233]));
   
+// For Loops practice, because I suck at it.
+    // Loops are the heart, blood, and soul of computer programming.
+
+  const myGroceries = ['🍊', '🥑', '🍓', '🍌', '🍐', '🫐', '🍊', '🥑', '🍓', '🍌', '🍐', '🫐', '🍊', '🥑', '🍓', '🍌', '🍐', '🫐', '🍊', '🥑', '🍓', '🍌', '🍐', '🫐', '🍊', '🥑', '🍓', '🍌', '🍐', '🫐'];
+  // console.log(myGroceries);
+  // console.log(myGroceries[0]);
+  // console.log(myGroceries[1]);
+  // console.log(myGroceries[2]);
+  // console.log(myGroceries[3]);
+
+  for (let i=0; i < myGroceries.length; i++) {
+    console.log(i+1, myGroceries[i]);
+  }
+  for (const fruit of myGroceries) {
+    console.log(fruit);
+  }
+  // trying to count all the fruits in the array, unsuccessful thus far.
+  const fruitsFrequency = (myGroceries) => {
+    let frequency = {};
+    for (const fruits of myGroceries) {
+      // console.log(fruits);
+      if (fruits in myGroceries) {
+        frequency[fruits]++
+      } else {
+        frequency[fruits] = 1
+      }
+    }
+    return frequency;
+  }
+  console.log(fruitsFrequency(myGroceries));
