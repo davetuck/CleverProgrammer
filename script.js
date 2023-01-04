@@ -307,7 +307,7 @@
     // console.log(fruits[3]);    // this takes way too long for larger loops
     //                     👇🏼 this means "run the same amount of times as there are items in this array"
     for (let i = 0; i < fruits.length; i++) // 👈🏼 "i++" just means increment i by one.  You can increment by 2 with i = i + 2 and so on.
-    //    👆🏼 this specifies the position to start looping at.  0 will begin at the start of the array.
+    //    👆🏼 this specifies the position to start looping at.  0 will begin at the start of the array.  This is also called indexing the number of runs, or starting where the number of runs begins.
     console.log(i, fruits[i]);
     
     // there's a better way of writing this loop:
@@ -462,7 +462,7 @@
     // console.log(words)
     // return frequency;
   }
-  const userInput = prompt('Write your input sentence here')
+  // const userInput = prompt('Write your input sentence here')
   console.log(wordFrequency(userInput));
 
   // incremental operators
