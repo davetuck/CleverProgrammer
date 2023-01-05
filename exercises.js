@@ -83,17 +83,29 @@ console.log(fuckBitchesGetMoney(9, 8, 5, 4));
   for (const fruit of myGroceries) {
     console.log(fruit);
   }
-  // trying to count all the fruits in the array, unsuccessful thus far.
+  // trying to count all the fruits in the array, unsuccessful thus far.  
   const fruitsFrequency = (myGroceries) => {
-    let frequency = {};
-    for (const fruits of myGroceries) {
+    let frequency = myGroceries.length;  // my problem was here, this was an empty object before.  Changed it to myGroceries.length and it worked!
+    for (const fruits in myGroceries) {
       // console.log(fruits);
-      if (fruits in myGroceries) {
-        frequency[fruits]++
-      } else {
-        frequency[fruits] = 1
-      }
+      // if (fruits in myGroceries) {
+      //   // frequency[fruits]++
+      // } else {
+      //   // frequency[fruits] = 1
+      // }
     }
     return frequency;
   }
-  console.log(fruitsFrequency(myGroceries));
+  console.log(fruitsFrequency(myGroceries)+ " fruits in this array.");
+
+
+// Counting the letters again for another run-through:
+
+const howManyLetters = () => {
+  let phrase = "Hey slut, bring those tits to the grocery store with me.  Actually fuck that, get naked and run to the car, we're going streaking."
+  result = phrase.length;
+  for (const letter in phrase) {
+  }
+  return result;
+}
+console.log(howManyLetters()+" characters in this awful string.");

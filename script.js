@@ -343,19 +343,19 @@
     // Create a NEW ARRAY with numbers that are doubled from a previous array
     let result = [] // 👈🏼 this is saying you want a new array
     for (const number of numbers) {
-      result.push(number * 2);
+      result.push(number * 2);  // 👈🏼 push is done to add the data to the new array
     };
-    console.log(result);
+    console.log(result);  // 👈🏼 console.log outside of the for loop so it doesn't repeat over and over.
 
       // now make that in to a FORMULA, where we square the numbers instead
-    const double = (numbers) => {
+    const square = (numbers) => {
       let result = []
       for (const number of numbers) {
         result.push(number ** 2)   // double astericks will square numbers
       }
       return result
     }
-    console.log(double([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]));
+    console.log(square(numbers));  // this is passing in the array, but you can also hard-code an array into the console log if you want those specific numbers.
 
     // sum up all numbers in an array
 
@@ -368,7 +368,7 @@
       for (letters of phrase) {
         // console.log(letters);  apparently not necessary
       };
-      return result;
+      return {result};
     }
     console.log(howManyCharacters());  // returns a nice added up integer to the console.log
 
@@ -381,9 +381,9 @@
         // console.log(letters + 1);  this returns the numbers as a string (1, 11, 12, 13, etc.)
         // console.log(Number(letters) + 1);  // this changes the letters to number form (from a string) and adds the 1 to them.
         result = Number(index) + 1;  // this stores the correct answer, 45, in result, at the end of the loop.
-      }
+      }         // 👆🏼 the result is a string, so this forces it to be a number instead.
       // return {result: result}; can be written the same as below:
-      return {result};
+      return {result};  // this automatically sets the result as the key.  This is a cool hack.
       // return {result: phrase1.length};
     }
     //const phrase1 = 'hey, can you go to the grocery store with me?';  // this can be passed in rather than added within the function.  It must be defined prior to console.log ing it.  It is hard-coded on this line.
